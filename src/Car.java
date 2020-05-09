@@ -13,4 +13,5 @@ public class Car extends Vehicle {
     public void setNumberOfSeats(int numberOfSeats) {
         this.numberOfSeats = numberOfSeats;
     }
+
 }

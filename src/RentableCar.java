@@ -3,25 +3,28 @@ public class RentableCar extends Car implements Rentable {
         super(name, yearBook, numberOfSeats);
     }
 
+    Person person;
+
+
     @Override
-    public String rent(String firstName, String lastName, String id) {
-        return null;
+    public void rent(String firstName, String lastName, String id) {
+        person = new Person();
+        person.firstName = firstName;
+        person.lastName = lastName;
+        person.id = id;
     }
 
     @Override
-    public String handOver() {
-        return "Zawróc";
+    public void hangover() {
+        person = null;
     }
 
     @Override
     public boolean isRent() {
-        if (isRent()== true) {
-            return true;
-        }else{
-            return false;
-        }
-
+        return person != null;
     }
-
-
+    public String toString() {
+        return "Samochód wypożyczony do " + person;
+    }
 }
+
